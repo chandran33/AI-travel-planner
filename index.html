@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-plane"></i>
+                <span>AI Travel Planner</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <div class="nav-auth" id="navAuth">
+                    <a href="login.html" class="nav-link login-btn">Login</a>
+                    <a href="signup.html" class="nav-link signup-btn">Sign Up</a>
+                </div>
+                <div class="nav-user" id="navUser" style="display: none;">
+                    <span class="user-welcome">Welcome, <span id="userName"></span>!</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Plan Your Perfect Trip with AI</h1>
+                <p class="hero-description">
+                    Discover amazing destinations, get personalized itineraries, and create unforgettable memories
+                    with our intelligent travel planning assistant.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="startPlanningBtn">
+                        <i class="fas fa-route"></i>
+                        Start Planning
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('features')">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Smart Planning</h3>
+                    <p>AI-powered recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose AI Travel Planner?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Planning</h3>
+                    <p>Our intelligent system creates personalized itineraries based on your preferences and budget.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Budget Optimization</h3>
+                    <p>Get the best value for your money with smart budget allocation and cost estimates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access your travel plans anywhere, anytime with our responsive design.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Saving</h3>
+                    <p>Skip hours of research. Get instant, detailed travel plans in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About AI Travel Planner</h2>
+                    <p>
+                        AI Travel Planner is your intelligent companion for creating memorable travel experiences.
+                        Using advanced algorithms and travel expertise, we help you discover the perfect destinations,
+                        plan detailed itineraries, and manage your travel budget effectively.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Happy Travelers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Destinations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h4>Explore the World</h4>
+                        <p>Discover hidden gems and popular destinations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Preference Form (Hidden by default) -->
+    <section id="travelForm" class="travel-form" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Tell Us About Your Dream Trip</h2>
+                    <p>Answer a few questions to get your personalized travel plan</p>
+                </div>
+
+                <form id="preferencesForm" class="preferences-form">
+                    <div class="form-step active" id="step1">
+                        <h3>What type of destination do you prefer?</h3>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="destination_type" value="Beach" required>
+                                <div class="option-content">
+                                    <i class="fas fa-umbrella-beach"></i>
+                                    <span>Beach</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="destination_type" value="Hill" required>
+                                <div class="option-content">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Hill Station</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="destination_type" value="City" required>
+                                <div class="option-content">
+                                    <i class="fas fa-city"></i>
+                                    <span>City</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="destination_type" value="Temple" required>
+                                <div class="option-content">
+                                    <i class="fas fa-place-of-worship"></i>
+                                    <span>Temple/Spiritual</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step2">
+                        <h3>What's your budget for this trip?</h3>
+                        <div class="input-group">
+                            <label for="budget">Budget (₹)</label>
+                            <input type="number" id="budget" name="budget" min="5000" max="500000" required>
+                            <small>Enter your total budget for the entire trip</small>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step3">
+                        <h3>How many days are you planning to travel?</h3>
+                        <div class="input-group">
+                            <label for="days">Number of Days</label>
+                            <input type="number" id="days" name="days" min="1" max="30" required>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step4">
+                        <h3>How many people will be traveling?</h3>
+                        <div class="input-group">
+                            <label for="travelers">Number of Travelers</label>
+                            <input type="number" id="travelers" name="travelers" min="1" max="20" required>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step5">
+                        <h3>How would you like to travel?</h3>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="transport" value="Bus" required>
+                                <div class="option-content">
+                                    <i class="fas fa-bus"></i>
+                                    <span>Bus</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="transport" value="Train" required>
+                                <div class="option-content">
+                                    <i class="fas fa-train"></i>
+                                    <span>Train</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="transport" value="Car" required>
+                                <div class="option-content">
+                                    <i class="fas fa-car"></i>
+                                    <span>Car</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="transport" value="Bike" required>
+                                <div class="option-content">
+                                    <i class="fas fa-motorcycle"></i>
+                                    <span>Bike</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step6">
+                        <h3>Do you need hotel accommodation?</h3>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="hotel_required" value="yes" required>
+                                <div class="option-content">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Yes, I need hotels</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="hotel_required" value="no" required>
+                                <div class="option-content">
+                                    <i class="fas fa-home"></i>
+                                    <span>No, I have arrangements</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step7">
+                        <h3>What's your food preference?</h3>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="food_preference" value="Vegetarian" required>
+                                <div class="option-content">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Vegetarian</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="food_preference" value="Non-Vegetarian" required>
+                                <div class="option-content">
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <span>Non-Vegetarian</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="food_preference" value="Vegan" required>
+                                <div class="option-content">
+                                    <i class="fas fa-seedling"></i>
+                                    <span>Vegan</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="food_preference" value="No Preference" required>
+                                <div class="option-content">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>No Preference</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" onclick="changeStep(-1)"
+                            style="display: none;">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeStep(1)">
+                            Next
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">
+                            <i class="fas fa-magic"></i>
+                            Generate My Trip
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Display Section -->
+    <section id="itineraryDisplay" class="itinerary-display" style="display: none;">
+        <div class="container">
+            <div class="itinerary-header">
+                <h2>Your Personalized Travel Plan</h2>
+                <div class="itinerary-actions">
+                    <button class="btn btn-secondary" onclick="printItinerary()">
+                        <i class="fas fa-print"></i>
+                        Print
+                    </button>
+                    <button class="btn btn-primary" onclick="downloadItinerary()">
+                        <i class="fas fa-download"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+            <div id="itineraryContent"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>AI Travel Planner</span>
+                    </div>
+                    <p>Your intelligent travel companion for unforgettable journeys.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@aitravelplanner.com</p>
+                    <p><i class="fas fa-phone"></i> +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Travel Planner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h3>Creating Your Perfect Trip...</h3>
+            <p>Our AI is analyzing your preferences and crafting the best itinerary for you.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
