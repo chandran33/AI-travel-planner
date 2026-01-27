@@ -206,13 +206,4 @@ The language is casual and supportive - like getting advice from a friend who's 
 - Enhance mobile experience
 - Add more languages
 
-## 📄 License
 
-MIT License - feel free to use this for your own projects!
-
-## 🌍 Demo
-
-- **Frontend Demo**: Check out `demo.html` for examples
-- **API Demo**: Visit `/api/health` for backend status
-
-- **Live Demo**: [Your deployed URL here]
