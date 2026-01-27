@@ -55,11 +55,6 @@ cd travel-buddy
 cd server
 npm install
 
-# Copy environment variables
-cp .env.example .env
-# Edit .env with your configuration
-```
-
 ### 2. Database Setup
 ```bash
 # Start MongoDB (if running locally)
@@ -92,45 +87,6 @@ npx serve . -p 3000
 # Option 3: Live reload for development
 npx live-server --port=3000
 ```
-
-### 5. Access the Application
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:3001
-- API Health Check: http://localhost:3001/api/health
-
-## 🔧 Configuration
-
-### Environment Variables (.env)
-```bash
-# Database
-MONGODB_URI=mongodb://localhost:27017/travel-buddy
-
-# JWT Secret (generate a strong random string)
-JWT_SECRET=your-super-secret-jwt-key
-
-# Server Configuration
-PORT=3001
-NODE_ENV=development
-
-# External APIs (optional)
-OPENWEATHER_API_KEY=your-openweather-api-key
-
-# CORS Settings
-FRONTEND_URL=http://localhost:3000
-```
-
-### External API Keys (Optional)
-- **OpenWeather API**: Get free API key at [openweathermap.org](https://openweathermap.org/api)
-  - Enables real-time weather data for destinations
-  - Without this, weather service shows friendly fallback messages
-
-## 📡 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Create new user account
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user info
-- `PUT /api/auth/preferences` - Update user preferences
 
 ### Trips
 - `POST /api/trips` - Create new trip itinerary
@@ -258,4 +214,5 @@ MIT License - feel free to use this for your own projects!
 
 - **Frontend Demo**: Check out `demo.html` for examples
 - **API Demo**: Visit `/api/health` for backend status
+
 - **Live Demo**: [Your deployed URL here]
