@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddy Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .demo-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .demo-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .demo-card p {
+            margin-bottom: 10px;
+        }
+        .demo-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>Travel Buddy - Demo & Examples</h1>
+            <p>See how our friendly travel planner creates personalized itineraries</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Smart Planning</h3>
+                <p>Creates realistic itineraries with 2-3 activities per day, includes rest time</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Budget Aware</h3>
+                <p>Focuses on affordable local experiences, street food, and free attractions</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Interest Based</h3>
+                <p>Tailors suggestions based on your interests - museums, food, nightlife, etc.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">😊</div>
+                <h3>Friendly Tone</h3>
+                <p>Feels like advice from a friend who's been there, not a corporate travel site</p>
+            </div>
+        </div>
+
+        <div class="demo-grid">
+            <div class="demo-card">
+                <h3>Example: Budget Tokyo Trip</h3>
+                <p><strong>Destination:</strong> Tokyo</p>
+                <p><strong>Days:</strong> 4 days</p>
+                <p><strong>Budget:</strong> Pretty tight</p>
+                <p><strong>Interests:</strong> Food, temples, anime</p>
+                <p><strong>Style:</strong> Relaxed</p>
+                <hr style="margin: 15px 0;">
+                <p><em>Result: Focuses on free temples, cheap ramen shops, Harajuku street food, and suggests taking the train instead of taxis. Includes rest time and realistic pacing.</em></p>
+            </div>
+
+            <div class="demo-card">
+                <h3>Example: Active Paris Weekend</h3>
+                <p><strong>Destination:</strong> Paris</p>
+                <p><strong>Days:</strong> 3 days</p>
+                <p><strong>Budget:</strong> Comfortable</p>
+                <p><strong>Interests:</strong> Art, history, cafes</p>
+                <p><strong>Style:</strong> Active</p>
+                <hr style="margin: 15px 0;">
+                <p><em>Result: Packs in Louvre, Montmartre, and Seine walks with bistro recommendations. Suggests early morning visits to beat crowds.</em></p>
+            </div>
+
+            <div class="demo-card">
+                <h3>Example: Spontaneous Barcelona</h3>
+                <p><strong>Destination:</strong> Barcelona</p>
+                <p><strong>Days:</strong> 5 days</p>
+                <p><strong>Budget:</strong> Moderate</p>
+                <p><strong>Interests:</strong> Architecture, beaches, tapas</p>
+                <p><strong>Style:</strong> Spontaneous</p>
+                <hr style="margin: 15px 0;">
+                <p><em>Result: Gives loose framework around Gaudí sites and beach time, encourages wandering the Gothic Quarter and discovering hidden tapas bars.</em></p>
+            </div>
+
+            <div class="demo-card">
+                <h3>Example: First-Timer London</h3>
+                <p><strong>Destination:</strong> London</p>
+                <p><strong>Days:</strong> 4 days</p>
+                <p><strong>Budget:</strong> Tight</p>
+                <p><strong>Interests:</strong> Museums, parks</p>
+                <p><strong>Style:</strong> Relaxed</p>
+                <hr style="margin: 15px 0;">
+                <p><em>Result: Highlights free museums, Hyde Park walks, and affordable pub meals. Reminds about tipping culture and suggests Oyster card for transport.</em></p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="demo-button">Try Travel Buddy Now!</a>
+        </div>
+
+        <div class="demo-card" style="margin-top: 40px;">
+            <h3>What Makes Travel Buddy Different?</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>No AI corporate speak</strong> - Talks like a real person who's traveled</li>
+                <li><strong>Realistic expectations</strong> - Won't try to cram 10 attractions into one day</li>
+                <li><strong>Budget conscious</strong> - Suggests street food over fancy restaurants</li>
+                <li><strong>Flexible planning</strong> - Reminds you that plans can change based on weather or mood</li>
+                <li><strong>Local insights</strong> - Includes practical tips like "cash is king in Tokyo" or "museums are free on Sundays in Paris"</li>
+                <li><strong>Student-friendly</strong> - Perfect for first-time travelers and budget-conscious explorers</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
