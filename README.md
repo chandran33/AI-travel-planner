@@ -141,56 +141,6 @@ For other destinations, it provides intelligent fallback planning with local tip
 - **Trips**: Complete itineraries with user association
 - **Destinations**: Detailed destination data with attractions, food, tips
 
-### Testing
-```bash
-cd server
-npm test
-```
-
-## 🚀 Deployment
-
-### Backend Deployment (Heroku/Railway/DigitalOcean)
-```bash
-# Set environment variables on your platform
-# Deploy backend to your preferred service
-# Update FRONTEND_URL in production
-```
-
-### Frontend Deployment (Netlify/Vercel)
-```bash
-# Update API_BASE_URL in script.js to your backend URL
-# Deploy static files to your preferred service
-```
-
-### Full-Stack Deployment
-The backend can serve static files in production:
-```bash
-NODE_ENV=production npm start
-# Serves frontend from root directory
-```
-
-## 🔒 Security Features
-
-- JWT-based authentication
-- Password hashing with bcrypt
-- Rate limiting on API endpoints
-- CORS protection
-- Input validation and sanitization
-- Security headers with Helmet.js
-
-## 🎯 Philosophy
-
-This planner is designed for **students and regular travelers**, not luxury tourism. It suggests:
-
-- ✅ Free or affordable attractions
-- ✅ Local food spots over fancy restaurants  
-- ✅ Public transport and walking
-- ✅ Realistic pacing with rest time
-- ✅ Authentic local experiences
-- ✅ Practical, honest advice
-
-The language is casual and supportive - like getting advice from a friend who's been there before, not a travel agency trying to sell you something.
-
 ## 🤝 Contributing
 
 1. Fork the repository
@@ -205,5 +155,6 @@ The language is casual and supportive - like getting advice from a friend who's 
 - Add new API integrations (flights, hotels)
 - Enhance mobile experience
 - Add more languages
+
 
 
